@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #059669;
+    /* Emerald Green */
+    --secondary-color: #f3f4f6;
+    /* Light Gray */
+    --text-color: #1f2937;
+    /* Dark Gray */
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Main Layout */
+.main-content {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Sidebar (Form & Filter) */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    border: none;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #047857;
+}
+
+/* Event List (Main Area) */
+.event-list {
+    flex-grow: 1;
+}
+
+.event-item {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.event-header h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.event-meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.event-actions a {
+    color: #ef4444;
+    /* Red for Delete */
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.event-actions a:hover {
+    color: #b91c1c;
+}
+
+.event-actions a.edit-btn {
+    color: #3b82f6;
+    /* Blue for Edit */
+}
+
+.event-actions a.edit-btn:hover {
+    color: #1d4ed8;
+}
+
+/* Category Badges */
+.category-badge {
+    display: inline-block;
+    background-color: #d1fae5;
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Archive Section Styling */
+.archive-list {
+    margin-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 2rem;
+}
+
+.archive-list h2 {
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.archive-item {
+    opacity: 0.7;
+    border-left: 5px solid #9ca3af;
+    /* Gray border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .event-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .event-actions {
+        margin-top: 0.5rem;
+    }
+
+    .event-actions a {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+}
